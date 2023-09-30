@@ -2,7 +2,6 @@ import datetime
 
 from aiogram import types
 from aiogram.types.message import ContentType
-
 from data_base.sqlite_db import db
 from keyboards.keyboard import confirm_button
 from loader import bot, PAYMENT_TOKEN
@@ -56,7 +55,8 @@ async def got_payment(message: types.Message):
 
 
 async def coffee_is_ready(callback: types.CallbackQuery):
-    await bot.send_message(chat_id=callback.data, text="Your order is ready")
+    await bot.send_message(chat_id=callback.data,
+                           text="Thank you for your 'payment'! Don't worry, your imaginary credit card was not charged. Your order is not on the way.")
 
 
 def register_payment_handlers(dp):
