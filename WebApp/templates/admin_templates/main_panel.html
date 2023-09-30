@@ -1,0 +1,45 @@
+<style>
+    .width {
+      width: 150px; /* Задайте бажаний розмір кнопки тут */
+      border: 10px ;
+    }
+</style>
+
+{% extends 'admin_templates/_base.html' %}
+{% block title %}
+Admin panel
+{% endblock title %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 col-lg-3 mb-3">
+        <div class="row">
+            <div class="col">
+                <a href="edit_menu" class="btn btn-danger btn-lg btn-block width border-dark">
+                    <br/>🧾<br/>Menu<br/><br/>
+                </a>
+            </div>
+            <div class="col">
+                <a href="admin_list" class="btn btn-info btn-lg btn-block width border-dark">
+                    <br/>🤵🏻‍♂️<br/>Admins<br/><br/>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-3">
+        <div class="row">
+            <div class="col">
+                <a href="/" class="btn btn-success btn-lg btn-block width border-dark">
+                    <br/>📱<br/>App<br/><br/>
+                </a>
+            </div>
+            <div class="col">
+                <a href="sales" class="btn btn-warning btn-lg btn-block width border-dark">
+                    <br/>📊<br/>Sales<br/><br/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+
+
+<div class="wrapper"></div>
+<div class="container">
+    <div class="inner">
+        {% for item in data %}
+        <div class="item" id="{{ item.id }}">
+            <div class="counter">0</div>
+            <img src="../static/coffee_pics/{{ item.id }}.png" alt="" class="img">
+            <p class="usercard">{{ item.name }} • <strong>{{ item.price }}₴</strong></p>
+            <div class="table">
+                <div class="row">
+                    <div class="btn cell minus" id="remove_{{ item.id }}">-</div>
+                    <div class="cell"></div>
+                    <div class="btn cell plus" id="btn_{{ item.id }}">+</div>
+                </div>
+            </div>
+            <button class="btn add" id="btn_{{ item.id }}">ADD</button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="/static/buttons.js"></script>
+
+</body>
+</html>

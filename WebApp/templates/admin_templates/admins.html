@@ -1,0 +1,33 @@
+{% extends 'admin_templates/_base.html' %}
+{% block title %}
+Admins List
+{% endblock title %}
+{% block content %}
+<h2 class="mb-4">Список адміністраторів</h2>
+<table class="table table-bordered table-striped text-center">
+    <thead>
+    <tr>
+        <th>Ім'я адміністратора</th>
+        <th>Останній логін</th>
+        <th>Дії</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for admin in data%}
+    <tr>
+        <td>{{ admin.username }}</td>
+        <td>{{ admin.last_login }}</td>
+        <td>
+            <a href="/admin/admin_list/delete/{{ admin.username}}" class="btn btn-danger">
+                Видалити
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a href="/admin/admin_list/add" class="btn btn-success">
+    Додати
+</a>
+{% include "admin_templates/_footer.html" %}
+{% endblock content %}

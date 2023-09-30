@@ -1,0 +1,35 @@
+{% extends 'admin_templates/_base.html' %}
+{% block title%}
+Edit menu panel
+{% endblock title%}
+{% block content %}
+<div class="container">
+    <h2>Меню категорії "{{ category }}"</h2>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Зображення</th>
+            <th>Назва</th>
+            <th>Ціна</th>
+            <th>Дії</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        <tr>
+            <td><img src="../../static/coffee_pics/{{ item.id }}.png" width="100"></td>
+            <td>{{ item.name }}</td>
+            <td> {{ item.price }}</td>
+            <td>
+                <a href="{{ category }}/{{ item.id }}" class="btn btn-primary btn-sm">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+        <!-- Додайте інші рядки для інших елементів меню -->
+        </tbody>
+    </table>
+    <a href="{{ category }}/add" class="btn btn-success"> ADD </a>
+</div>
+{% include 'admin_templates/_footer.html'%}
+{% endblock content %}

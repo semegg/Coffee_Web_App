@@ -1,0 +1,45 @@
+<style>
+    .width {
+      width: 150px;
+      border: 10px ;
+    }
+</style>
+{% extends 'admin_templates/_base.html' %}
+{% block title %}
+<br> Choose a category
+{% endblock title %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6 col-lg-3 mb-3">
+        <div class="row">
+            <div class="col">
+                <a href="edit_menu/coffee" class="btn btn-success btn-lg btn-block width border-dark">
+                    <br/>Coffee<br/><br/>
+                </a>
+            </div>
+            <div class="col">
+                <a href="edit_menu/ice coffee" class="btn btn-success btn-lg btn-block width border-dark">
+                    ️<br/>Ice Coffee<br/><br/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-3">
+        <div class="row">
+            <div class="col">
+                <a href="edit_menu/other" class="btn btn-success btn-lg btn-block width border-dark">
+                    <br/>Other<br/><br/>
+                </a>
+            </div>
+            <div class="col">
+                <a href="edit_menu/sweets" class="btn btn-success btn-lg btn-block width border-dark">
+                    <br/>Sweets<br/><br/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "admin_templates/_footer.html" %}
+{% endblock content %}

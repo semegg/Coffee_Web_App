@@ -1,0 +1,43 @@
+<style>
+    .width {
+      width: 150px;
+      border: 10px ;
+    }
+</style>
+{% extends 'admin_templates/_base.html' %}
+{% block title%}
+Sales history
+{% endblock title%}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 col-lg-3 mb-3">
+        <div class="row">
+            <div class="col">
+                <a href="1_day" class="btn btn-success btn-lg btn-block width border-dark">
+                    <br/>1 Day<br/><br/>
+                </a>
+            </div>
+            <div class="col">
+                <a href="1_week" class="btn btn-success btn-lg btn-block width border-dark">
+                    ️<br/>1 Week<br/><br/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-3">
+        <div class="row">
+            <div class="col">
+                <a href="30_days" class="btn btn-success btn-lg btn-block width border-dark">
+                    <br/>1 Month<br/><br/>
+                </a>
+            </div>
+            <div class="col">
+                <a href="all_time" class="btn btn-success btn-lg btn-block width border-dark">
+                    <br/>All time history<br/><br/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "admin_templates/_footer.html" %}
+{% endblock content %}

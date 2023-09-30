@@ -1,0 +1,30 @@
+{% extends 'admin_templates/_base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Редагування товару</h2>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label">Зображення товару:</label>
+            <img src="/../static/coffee_pics/{{ product.id }}.png" width="200">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Завантажити нове зображення:</label>
+            <input class="form-control" id="image" name="image" type="file">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="name">Назва товару:</label>
+            <input class="form-control" id="name" name="name" type="text" value="{{ product.name }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="price">Ціна товару:</label>
+            <input class="form-control" id="price" name="price" type="text" value="{{ product.price }}">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit" name="action" value="save">Save</button>
+            <button class="btn btn-danger" type="submit" name="action" value="delete">Delete</button>
+        </div>
+    </form>
+</div>
+{% include "admin_templates/_footer.html" %}
+{% endblock content %}
